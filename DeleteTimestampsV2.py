@@ -21,7 +21,6 @@ def select_file():
     global selected_file_path
     selected_file_path = filedialog.askopenfilename()
     if selected_file_path:
-        print("Selected file:", selected_file_path)
         # Extract the file name from the path
         file_name = os.path.basename(selected_file_path)
         # Update the label text with the selected file name
@@ -37,18 +36,14 @@ def save_file():
                 text = remove_empty_lines(remove_timestamps(file.read()))
             with open(save_path, 'w') as file:
                 file.write(text)
-            print("File saved:", save_path)
             # Update the label text after saving the file
             file_path_label.config(text="Done😁!")
-    else:
-        print("No file selected.")
 
 # Create a Tkinter root window
 root = tk.Tk()
 root.title("DeleteTimestamps")
 root.geometry('300x200')
 root.resizable(False, False)
-root.iconbitmap("icon.ico")
 root.configure(bg="#FFC0CB")
 button_style = ttk.Style()
 button_style.configure('TButton', font=('Arial', 14, 'bold'), background='#FF69B4')
