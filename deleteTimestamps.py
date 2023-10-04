@@ -1,5 +1,6 @@
 import re
 
+
 def remove_timestamps(text):
     # Regular expression pattern to match timestamps in the format hh:mm
     pattern = r'\b\d{1,2}:\d{2}\b'
